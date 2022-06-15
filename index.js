@@ -1,5 +1,14 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const map = {};
+  for (let i = 0; i < array.length; i++) {
+    const diff = target - array[i];
+    if (map[diff]) {
+      return true;
+    }
+    map[array[i]] = true;
+  }
+  return false;
 }
 
 /* 
