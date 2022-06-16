@@ -1,14 +1,26 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-  const map = {};
-  for (let i = 0; i < array.length; i++) {
-    const diff = target - array[i];
-    if (map[diff]) {
-      return true;
-    }
-    map[array[i]] = true;
-  }
-  return false;
+
+  for (let i = 0; i < array.length - 1; i++){
+		let fn = array[i];
+		for (let j = i + 1;j< array.length; j++){
+			let sn = array[j];
+			if (fn + sn === target){
+				return  true;
+			}
+		}
+	}
+	return false;
+
+  //const map = {};
+  // for (let i = 0; i < array.length; i++) {
+  //   const diff = target - array[i];
+  //   if (map[diff]) {
+  //     return true;
+  //   }
+  //   map[array[i]] = true;
+  // }
+  // return false;
 }
 
 /* 
